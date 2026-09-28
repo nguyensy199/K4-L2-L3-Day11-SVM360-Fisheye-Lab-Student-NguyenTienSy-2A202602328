@@ -1,1 +1,5 @@
 id,date,question,decision,rationale,status
+D01,2026-09-28,"Xu ly nguoi lai xe may va nguoi dat xe dap (R03)",Nguoi lai xe may hop nhat thanh 1 box Bike; nguoi dat xe tach thanh Pedestrian va Bike rieng,Tuan thu nghiem ngat quy tac R03 de thong nhat du lieu huan luyen va tranh double-counting,approved
+D02,2026-09-28,"Xu ly cac box o to con o xa co chieu cao H<40px (R01)",Xoa bo cac box duoi 40px trong dot rework theo self-QC va QA review,Theo quy tac R01 cac vat the <40px tren anh goc khong bat buoc gan nhan va tranh spurious false positive,approved
+D03,2026-09-28,"Phan loai xe 3 banh auto-rickshaw dac thu tren duong pho",Gan dung nhan ThreeWheeler cho moi xe ba banh cho khach thay vi Car hoac Bus,Dac trung ngoai quan va dong luc hoc cua xe ba banh khac biet hoan toan so voi oto 4 banh,approved
+D04,2026-09-28,"Phan xu doi tuong mo o hau canh bi che khuat tai frame 062370",Gui ticket escalation len Lead Annotator va Guideline team de lam ro quy chuan mo ta unreadable,Doi tuong bi che khuat >70% va mat dac trung class gay bat dong giua annotator va reference,escalated

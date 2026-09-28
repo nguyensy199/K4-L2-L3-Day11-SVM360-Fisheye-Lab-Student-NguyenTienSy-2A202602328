@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,30,Luu thong do thi thong thuong,Kiem tra do phu co ban cua phuong tien phia truoc o toc do tieu chuan
+front,hard,30,Choi sang den pha va phuong tien cat mat dot ngot,Camera truoc chiu rui ro va cham truc dien va bien thien do sang cao
+rear,normal,25,Do xe va lui xe trong bai thong thoang,Danh gia nhan dien vach ke va chuong ngai vat phia sau
+rear,hard,25,Diem mu goc thap va nguoi di bo cat ngang khi lui,Rui ro cao va cham tre nho hoac vat the thap o duoi tam nhin guong
+left,normal,20,Quan sat lan duong ben trai xe ego,Kiem tra do phu lan duong va phuong tien song song
+left,hard,25,Meo quang hoc ria kinh va xe vuot o culy rat gan,Rui ro seam seam-crossing va meo hinh hoc lon khi phuong tien ap sat
+right,normal,20,Quan sat le duong va via he ben phu,Kiem tra mep duong va nguoi di bo ven duong
+right,hard,25,Diem mu ben phu va xe hai banh chen lan trong do thi,Rui ro va cham cao nhat voi xe may tai cac nuoc chau A khi re phai

@@ -1,18 +1,14 @@
 # Đề xuất gold set theo camera — tình huống giả lập
 
-**Đầu bài:** 50.000 frame từ bốn camera SVM, ngân sách chọn 200 frame để review/gold. Đây là tình huống trên slide,
-**không phải** 50.000 frame có trong repo. Phân bổ đúng 200 ở `45_sampling_plan.csv` cho bốn camera, mỗi camera có
-normal và hard slice. “Gold set” ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference
-ADASIND hoặc nhãn bạn vừa vẽ. Nếu cần, dùng `notebooks/day11-svm360-colab.ipynb` để thử tổng phân bổ; notebook
-không làm thay phần lý do.
+**Đầu bài:** 50.000 frame từ bốn camera SVM, ngân sách chọn 200 frame để review/gold. Đây là tình huống trên slide, **không phải** 50.000 frame có trong repo. Phân bổ đúng 200 ở `45_sampling_plan.csv` cho bốn camera, mỗi camera có normal và hard slice. “Gold set” ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference ADASIND hoặc nhãn bạn vừa vẽ.
 
 | camera_id | Hard case cần chọn | Vì sao dễ sai | Annotation space / calibration cần giữ | Cách review trước khi gọi là gold |
 |---|---|---|---|---|
-| front | TODO | TODO | TODO | TODO |
-| rear | TODO | TODO | TODO | TODO |
-| left | TODO | TODO | TODO | TODO |
-| right | TODO | TODO | TODO | TODO |
+| front | Đèn pha chói ngược sáng ban đêm, giọt nước đọng trên thấu kính khi trời mưa | Lóa quang học che mất biên dạng xe; khúc xạ qua giọt nước tạo box giả | Gán nhãn trên ảnh raw fisheye gốc, lưu kèm ma trận calibration (intrinsics/extrinsics) | 2 annotator gán nhãn độc lập (mù), Lead Auditor phân xử nếu IoU < 0.75 |
+| rear | Chướng ngại vật thấp (trẻ em, thú cưng, curb) trong hầm xe ánh sáng yếu | Ánh sáng kém, vật thể nằm sát cạnh dưới bị cản sau xe ego che khuất một phần | Hệ tọa độ ảnh raw kết hợp polygon mask ego_body cản sau chính xác | Đối chiếu với tín hiệu radar/ultrasonic lùi xe và soát chéo 2 cấp |
+| left | Xe hai bánh vượt áp sát sườn tại vùng seam tiếp giáp camera trước và trái | Méo hình học cực đại ở rìa ngoài vòng kính; tỷ lệ co giãn thay đổi đột ngột | Raw fisheye space kèm mô hình hiệu chuẩn méo (Kannala-Brandt model) | Review đồng thời 2 camera lân cận tại cùng timestamp để kiểm tra tính nhất quán |
+| right | Điểm mù góc phụ bên phải, xe máy luồn lách ở cự ly gần khi xe ego rẽ | Bị bóng đổ của xe ego che khuất, vật di chuyển nhanh cắt chéo góc nhìn | Raw fisheye space, giữ nguyên box ôm sát phần nhìn thấy thực tế | Kiểm tra chéo độc lập theo checklist 9 mục với sự tham gia của QA Lead |
 
-- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): TODO
-- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: TODO
-- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: TODO
+- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): Cần làm mới (refresh) gold set khi: (1) Thay đổi phần cứng camera (cảm biến, tiêu cự lens, vị trí rig trên xe); (2) Phát hiện calibration drift cơ học sau một thời gian xe vận hành rung lắc; (3) Guideline có bản vá mới (bump `rules_version`) làm thay đổi taxonomy hoặc ranh giới phân loại.
+- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: Khi một chiếc xe tải đi qua vùng seam giữa camera trước và camera bên trái, nó có thể xuất hiện trên cả hai camera cùng lúc. Tuyệt đối không tự ý gộp hai box hoặc gán cùng một Track ID nếu chưa thỏa mãn 3 điều kiện: (1) Timestamp của hai camera được đồng bộ chặt chẽ (hardware genlock); (2) Có ma trận calibration ngoại suy (extrinsics) chuẩn xác để chiếu 2 box về cùng một vật thể 3D trong không gian BEV; (3) Có chính sách (policy) quy định rõ hệ thống perception downstream sẽ tiêu thụ hai box độc lập hay một fused-object duy nhất.
+- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: Mỗi camera trong hệ thống SVM 360° đối mặt với môi trường quang học và vật lý khác hẳn nhau: camera trước chịu luồng gió bụi và tốc độ tương đối cao; camera hai bên hông chịu méo quang học rìa cực lớn và quan sát vật cự ly gần; camera sau bị bụi bẩn bám dính và chịu ánh sáng đèn đuôi. Chỉ số cao trên 1 camera không thể khái quát hóa cho khả năng nhận diện ở vùng mù hoặc vùng chồng lấn (seam) của 3 camera còn lại.

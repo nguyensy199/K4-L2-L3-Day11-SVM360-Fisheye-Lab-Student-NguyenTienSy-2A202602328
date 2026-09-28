@@ -1,1 +1,36 @@
 round,slice,frame,object_ref,cell,what,why,severity,owner,rule_id,evidence,action,rules_version,note
+calib,C0,adasind_019560.jpg,L1,na,SPURIOUS,E1_annotator_error,P2,annotator,R01,adasind_019560.jpg:L1,keep_with_reason,v1.0.0,Box o ria kinh
+calib,C0,adasind_019560.jpg,R4,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_019560.jpg:R4,rework,v1.0.0,Bo sot xe do ben duong
+calib,C0,adasind_019560.jpg,R5,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_019560.jpg:R5,rework,v1.0.0,Bo sot xe 3 banh o xa
+calib,C0,adasind_019560.jpg,R6,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_019560.jpg:R6,rework,v1.0.0,Bo sot nguoi di bo
+r2_qa,B2-dense,adasind_069450.jpg,L1,L_only,SPURIOUS,,,annotator,R01,adasind_069450.jpg:L1 H=25px,rework,v1.0.0,Xe con o xa duoi nguong H=40
+r2_qa,B2-dense,adasind_069450.jpg,L2,L_only,SPURIOUS,,,annotator,R01,adasind_069450.jpg:L2 H=24px,rework,v1.0.0,Nguoi di bo xa duoi nguong H=40
+r2_qa,B2-dense,adasind_117120.jpg,L5,L_only,SPURIOUS,,,annotator,R01,adasind_117120.jpg:L5 H=23px,rework,v1.0.0,Xe con o hau canh H=23px
+r2_qa,B2-dense,adasind_062370.jpg,L1,L_only,ATTRIBUTE,,,annotator,R05,adasind_062370.jpg:L1 truncated=true,keep_with_reason,v1.0.0,Xe o sat mep kinh bi cat dung truncated
+r1_craft,B2-dense,adasind_062370.jpg,R4,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_062370.jpg:R4,rework,v1.0.0,Bo sot vat the nho o xa
+r1_craft,B2-dense,adasind_062370.jpg,R7,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_062370.jpg:R7,rework,v1.0.0,Bo sot nguoi di bo bi che
+r1_craft,B2-dense,adasind_062370.jpg,R8,na,MISSING,E1_annotator_error,P1,annotator,R01,adasind_062370.jpg:R8,rework,v1.0.0,Bo sot phuong tien o hau canh
+r1_craft,B2-dense,adasind_117120.jpg,L5,na,SPURIOUS,E1_annotator_error,P1,annotator,R01,adasind_117120.jpg:L5,rework,v1.0.0,Ve thua vat the nho H<40px
+r3_diag,B2-dense,adasind_062370.jpg,L3+R5,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_062370.jpg:L3+R5,keep_with_reason,v1.0.0,Model bo sot ThreeWheeler vi meo fisheye
+r3_diag,B2-dense,adasind_062370.jpg,L2+R1,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_062370.jpg:L2+R1,keep_with_reason,v1.0.0,Model bo sot xe 3 banh o ria trai
+r3_diag,B2-dense,adasind_062370.jpg,L4+R6,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_062370.jpg:L4+R6,keep_with_reason,v1.0.0,Model bo sot Bike do bi occluded
+r3_diag,B2-dense,adasind_062370.jpg,R4+M6,RM_noL,MISSING,E1_annotator_error,P1,annotator,R01,adasind_062370.jpg:R4+M6,rework,v1.0.0,Annotator bo sot doi tuong giua duong
+r3_diag,B2-dense,adasind_062370.jpg,R7,R_only,MISSING,E1_annotator_error,P1,annotator,R01,adasind_062370.jpg:R7,rework,v1.0.0,Ref co nguoi di bo annotator quen chua ve
+r3_diag,B2-dense,adasind_062370.jpg,R8,R_only,MISSING,E2_guideline_gap,P1,guideline,R04,adasind_062370.jpg:R8,escalate,v1.0.0,Doi tuong mo o xa chua ro ranh gioi class can escalate
+r3_diag,B2-dense,adasind_062370.jpg,M3,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_062370.jpg:M3,keep_with_reason,v1.0.0,Model nhan nham bien quang cao thanh xe
+r3_diag,B2-dense,adasind_062370.jpg,M4,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_062370.jpg:M4,keep_with_reason,v1.0.0,Model hallucination o mai nha
+r3_diag,B2-dense,adasind_062370.jpg,M5,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_062370.jpg:M5,keep_with_reason,v1.0.0,Model bao sai tren bong cay
+r3_diag,B2-dense,adasind_062370.jpg,M8,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_062370.jpg:M8,keep_with_reason,v1.0.0,Model bao box thua do phan xa mat duong
+r3_diag,B2-dense,adasind_062370.jpg,M10,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_062370.jpg:M10,keep_with_reason,v1.0.0,Model nham lan cot dien thanh pedestrian
+r3_diag,B2-dense,adasind_069450.jpg,L4+R1,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_069450.jpg:L4+R1,keep_with_reason,v1.0.0,Model khong nhan dien duoc pedestrian bi nguoc sang
+r3_diag,B2-dense,adasind_069450.jpg,L5+R2,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_069450.jpg:L5+R2,keep_with_reason,v1.0.0,Model bo sot pedestrian o le duong
+r3_diag,B2-dense,adasind_069450.jpg,M5,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_069450.jpg:M5,keep_with_reason,v1.0.0,Model bat box gia tai bui cay
+r3_diag,B2-dense,adasind_069450.jpg,M7,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_069450.jpg:M7,keep_with_reason,v1.0.0,Model bat nham bang hieu
+r3_diag,B2-dense,adasind_117120.jpg,L2+R2,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_117120.jpg:L2+R2,keep_with_reason,v1.0.0,Model bo sot o to con mau toi
+r3_diag,B2-dense,adasind_117120.jpg,L6+R4,LR_noM,MISSING,E4_model_domain,P2,ai_team,R01,adasind_117120.jpg:L6+R4,keep_with_reason,v1.0.0,Model bo sot xe buyt o xa
+r3_diag,B2-dense,adasind_117120.jpg,L5,L_only,SPURIOUS,E1_annotator_error,P1,annotator,R01,adasind_117120.jpg:L5,rework,v1.0.0,L5 chieu cao nho hon 40px can xoa khi rework
+r3_diag,B2-dense,adasind_117120.jpg,M1,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_117120.jpg:M1,keep_with_reason,v1.0.0,Model bat nham bong do tren mat duong
+r3_diag,B2-dense,adasind_117120.jpg,M6,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_117120.jpg:M6,keep_with_reason,v1.0.0,Model bat nham thung hang
+r3_diag,B2-dense,adasind_117120.jpg,M7,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_117120.jpg:M7,keep_with_reason,v1.0.0,Model bao box thua do meo goc tren
+r3_diag,B2-dense,adasind_117120.jpg,M8,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_117120.jpg:M8,keep_with_reason,v1.0.0,Model hallucination o ria phai
+r3_diag,B2-dense,adasind_117120.jpg,M10,M_only,SPURIOUS,E4_model_domain,P2,ai_team,R02,adasind_117120.jpg:M10,keep_with_reason,v1.0.0,Model bat box gia o goc toi
